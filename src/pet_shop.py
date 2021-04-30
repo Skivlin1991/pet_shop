@@ -7,16 +7,16 @@ def get_total_cash(pet_shop):
 # to + or - cash from the shop 
 def add_or_remove_cash(pet_shop, amount):
     pet_shop["admin"]["total_cash"] += amount
-# to sell pets and remove them
+# to sell pets and remove them.
 def get_pets_sold(pet_shop):
     return pet_shop["admin"]["pets_sold"]
 # to show pets sold
 def increase_pets_sold(pet_shop, num_pets_sold):
     pet_shop["admin"]["pets_sold"] += num_pets_sold
-# to understand the stock count
+# to understand the stock count.
 def get_stock_count(pet_shop):  
     return len(pet_shop["pets"])
-# to see the breeds of the pet in store
+# to see the breeds of the pet in store.
 def get_pets_by_breed(pet_shop, breed):
     found_pets = []
     for pet in pet_shop["pets"]:
