@@ -1,4 +1,3 @@
-from start_point.src.pet_shop import  * 
 import unittest
 from src.pet_shop import *
 

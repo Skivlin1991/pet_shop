@@ -1,12 +1,9 @@
 # this will be getting the shop name 
-from start_point.tests import pet_shop_test
-
-
 def get_pet_shop_name(pet_shop):
     return pet_shop["name"]
 # to find out how much cash the shop has
 def get_total_cash(pet_shop):
-    return pet_shop['admin']['total_cash']
+    return pet_shop["admin"]["total_cash"]
 # to + or - cash from the shop 
 def add_or_remove_cash(pet_shop, amount):
     pet_shop["admin"]["total_cash"] += amount
@@ -14,7 +11,7 @@ def add_or_remove_cash(pet_shop, amount):
 def get_pets_sold(pet_shop):
     return pet_shop["admin"]["pets_sold"]
 # to show pets sold
-def increase_pets_sold(pet_shop):
+def increase_pets_sold(pet_shop, num_pets_sold):
     pet_shop["admin"]["pets_sold"] += num_pets_sold
 # to understand the stock count
 def get_stock_count(pet_shop):
@@ -28,11 +25,16 @@ def get_pets_by_breed(pet_shop, breed):
     return found_pets
 # to find pets my name(not breed)
 def find_pet_by_name(pet_shop, name):
+    for pet in pet_shop["pets"]:
+        if pet["name"] == name:
+            return pet
+# find pets to remove from stock once sold 
+def remove_pet_by_name(pet_shop, name):
     pet_to_delete = find_pet_by_name(pet_shop, name)
     pet_shop["pets"].remove(pet_to_delete)
 # now im add new pets to the stock 
 def add_pet_to_stock(pet_shop, name):
-    pet_shop["pets"].append(pet_shop_test)
+    pet_shop["pets"].append(pet_shop)
 # now seeing if the customer has the cash to pay for a pet
 def get_customer_cash(customer):
     return customer["cash"]
